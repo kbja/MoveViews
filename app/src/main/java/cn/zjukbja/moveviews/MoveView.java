@@ -26,7 +26,7 @@ public class MoveView {
 
     private final int inParent = 0;//whether allow the view over the parent;
     private final int inWindow = 1;
-    private  int viewBorder = inParent;
+    private int viewBorder = inParent;
 
     private View mView = null;
     private final View mRoot;
@@ -84,16 +84,23 @@ public class MoveView {
         }
     };
 
+    //move layouts
+    public MoveView(ViewGroup view, Context context) throws Exception {
+        disableViewsFocusable(view);
+        ViewGroup group = (ViewGroup) view.getParent();
+        mRoot = group;
+        initViewAndParent(view, context);
+        screenWidth = dm.widthPixels;
+        screenHeight = dm.heightPixels;
+    }
 
+    //move widgets
     public MoveView(View view, Context context) throws Exception {
         ViewGroup group = (ViewGroup) view.getParent();
         mRoot = group;
-        if (mRoot == null) {
-            Exception e = new Exception("view's parent is null");
-            throw e;
-        }
-        mView = view;
-        mContext = context;
+        initViewAndParent(view, context);
+        screenWidth = dm.widthPixels;
+        screenHeight = dm.heightPixels;
 //        check whether root is view's parent;
 //        for (int i = 0; i <= group.getChildCount(); i++) {
 //            View child = group.getChildAt(i);
@@ -107,17 +114,24 @@ public class MoveView {
 //            Exception e = new Exception("root is not the father of the view");
 //            throw e;
 //        }
+//        Log.e(TAG,"screenHeight : "+screenHeight+" screenWidth : "+screenWidth);
+    }
+
+    private void initViewAndParent(View view, Context context) throws Exception {
+        mView = view;
+        mContext = context;
         mView.setOnLongClickListener(longClickListener);
         mView.setOnTouchListener(touchListener);
         mView.setOnClickListener(onClickListener);
         dm = context.getResources().getDisplayMetrics();
-        screenWidth = dm.widthPixels;
-        screenHeight = dm.heightPixels;
-
-//        Log.e(TAG,"screenHeight : "+screenHeight+" screenWidth : "+screenWidth);
-        disableViewsFocusable((ViewGroup) view);
+        if (mRoot == null) {
+            Exception e = new Exception("view's parent is null");
+            throw e;
+        }
         changeAttr = new ChangeAttr();
+
     }
+
 
     private void disableViewsFocusable(ViewGroup root) {
         int numChild = root.getChildCount();
@@ -150,8 +164,8 @@ public class MoveView {
         changeAttr.initMoving();
     }
 
-    public void setIsInParent(boolean b){
-        if(b)
+    public void setIsInParent(boolean b) {
+        if (b)
             viewBorder = inParent;
         else
             viewBorder = inWindow;
@@ -241,6 +255,7 @@ public class MoveView {
             mView.layout(nLeft, nTop, nRight, nBottom);
 
         }
+
         //view can't be seen when it's over its parent
         private void calInWindow(int nRight, int nLeft, int nTop, int nBottom) {
             if (nTop < 0) {

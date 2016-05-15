@@ -62,7 +62,11 @@
             android:text="button2"
             android:onClick="onClick"
             android:textSize="30dp" />
-
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"
+            android:id="@+id/image1"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

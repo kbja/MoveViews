@@ -27,6 +27,8 @@ public class SampleActivity extends Activity {
             new MoveView(view, this);
             view = findViewById(R.id.second_line);
             new MoveView(view,this);
+            view = findViewById(R.id.image1);
+            new MoveView(view,this);
             view = findViewById(R.id.third_line_1);
             Log.e("1234",view.getHeight()+"****");
             Log.e("1234",((View)view.getParent()).getHeight()+"****");
