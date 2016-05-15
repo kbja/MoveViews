@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/zhou/Desktop/MyApp/MoveViews/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/Users/zhou/Desktop/MyApp/MoveViews/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.0.1_c98d7bc78bffc736b0ce6948fc184b8f2099fa4e.jar" />
+    </item>
+    <item
+        jar="/Users/zhou/Downloads/adt-bundle-mac-x86_64-20140702/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="/Users/zhou/Desktop/MyApp/MoveViews/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1_7bb2a37dfb71861df04fc3bb07b059d8eeec85c2.jar" />
+    </item>
+    <item
+        jar="/Users/zhou/Desktop/MyApp/MoveViews/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="/Users/zhou/Desktop/MyApp/MoveViews/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.0.1_bd82666b5833c4232938aeede22e245f514b9852.jar" />
+    </item>
+    <item
+        jar="/Users/zhou/Desktop/MyApp/MoveViews/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="/Users/zhou/Desktop/MyApp/MoveViews/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1_6023c5af36a1128e4c7b83e210c343db0657cb23.jar" />
+    </item>
+
+</items>
