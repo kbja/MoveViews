@@ -1,5 +1,6 @@
 package cn.zjukbja.moveviews;
 
+import android.app.Fragment;
 import android.content.Context;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -13,7 +14,7 @@ import android.view.animation.AnimationUtils;
  * Created by zhou on 16/5/11.
  */
 public class MoveView {
-    DisplayMetrics dm;
+    private DisplayMetrics dm;
     private final int screenWidth;
     private final int screenHeight;
     private int parentWidth;
@@ -163,7 +164,7 @@ public class MoveView {
         moveStatus = MOVING;
         changeAttr.initMoving();
     }
-
+    //not useful yet
     public void setIsInParent(boolean b) {
         if (b)
             viewBorder = inParent;

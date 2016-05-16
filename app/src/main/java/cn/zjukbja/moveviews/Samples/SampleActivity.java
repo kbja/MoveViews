@@ -1,10 +1,15 @@
-package cn.zjukbja.moveviews;
+package cn.zjukbja.moveviews.Samples;
 
 import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+import android.view.ViewGroup;
+
+import cn.zjukbja.moveviews.MoveView;
+import cn.zjukbja.moveviews.R;
 
 
 /**
@@ -14,7 +19,7 @@ public class SampleActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.test_activity);
+        setContentView(R.layout.sample_activity);
 
     }
 
@@ -23,6 +28,7 @@ public class SampleActivity extends Activity {
         super.onResume();
         View view;
         try {
+            //basic view
             view  = findViewById(R.id.first_line);
             new MoveView(view, this);
             view = findViewById(R.id.second_line);
@@ -30,9 +36,16 @@ public class SampleActivity extends Activity {
             view = findViewById(R.id.image1);
             new MoveView(view,this);
             view = findViewById(R.id.third_line_1);
-            Log.e("1234",view.getHeight()+"****");
-            Log.e("1234",((View)view.getParent()).getHeight()+"****");
             new MoveView(view,this);
+
+            //fragment
+            FragmentManager manager = getFragmentManager();
+            Fragment sampleFragment = manager.findFragmentById(R.id.sample_fragment);
+            view = sampleFragment.getView();
+            new MoveView(view,this);
+            view = view.findViewById(R.id.fragment_image1);
+            new MoveView(view,this);
+
 
         } catch (Exception e) {
             e.printStackTrace();

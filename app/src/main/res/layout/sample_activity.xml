@@ -114,7 +114,14 @@
                 android:layout_below="@id/text9"/>
 
         </RelativeLayout>
-
     </LinearLayout>
+    <fragment
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:name="cn.zjukbja.moveviews.Samples.SampleFragment"
+        android:layout_below="@id/third_line"
+        android:layout_marginTop="10dp"
+        android:id="@+id/sample_fragment"
+        />
 
 </RelativeLayout>
